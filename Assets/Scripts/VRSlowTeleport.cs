@@ -14,6 +14,10 @@ public class VRSlowTeleport : MonoBehaviour
     public float fadeDuration = 1.5f;   // Tiempo en segundos para oscurecer/aclarar
     public float blackHoldTime = 0.3f;  // Tiempo en negro antes de aclarar
 
+    [Header("AudioEscaleras")]
+
+    public AudioSource audioSource;
+
     private bool isTeleporting = false;
     private bool canTeleport = false;
 
@@ -66,6 +70,8 @@ public class VRSlowTeleport : MonoBehaviour
     {
         Color c = fadeImage.color;
         float elapsed = 0f;
+
+        if(audioSource != null && !audioSource.isPlaying) audioSource.Play();
 
         while (elapsed < duration)
         {
