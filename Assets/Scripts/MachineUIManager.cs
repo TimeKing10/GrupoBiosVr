@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 public class MachineUIManager : MonoBehaviour
 {
     [Header("UI General")]
-    [SerializeField] private GameObject detailPanel; // Panel que se activa al seleccionar
+    [SerializeField] private GameObject detailPanel; 
 
     [Header("Campos individuales")]
     [SerializeField] private TMP_Text idText;
@@ -22,26 +22,25 @@ public class MachineUIManager : MonoBehaviour
     [SerializeField] private TMP_Text paquetesMaquinaSeteadosText;
     [SerializeField] private TMP_Text tonelasPorMaquinaDiaText;
 
+    private int currentIndex = 0; // 👉 índice actual
+
     private void Start()
     {
-        if (detailPanel != null)
-            detailPanel.SetActive(false); // Al inicio oculto
+        if (detailPanel != null) detailPanel.SetActive(false);
     }
 
-    /// <summary>
-    /// Este método lo llamará cada botón, pasando el índice de la máquina en la lista
-    /// </summary>
     public void ShowMachineDetail(int index)
     {
-        if (MachineReader.Machines == null || MachineReader.Machines.Count <= index)
+        if (MachineReader.Machines == null || MachineReader.Machines.Count <= index || index < 0)
         {
             Debug.LogWarning("⚠️ No hay datos de máquina en ese índice");
             return;
         }
 
+        currentIndex = index; // guardar el índice actual
+
         Dictionary<string, object> machine = MachineReader.Machines[index];
 
-        // Mostrar el panel
         if (detailPanel != null) detailPanel.SetActive(true);
 
         // --- Conversión de estado máquina ---
@@ -61,7 +60,7 @@ public class MachineUIManager : MonoBehaviour
             }
         }
 
-        // Rellenar cada campo si existe en el JSON
+        // Rellenar cada campo
         idText.text = $"ID: {machine.GetValueOrDefault("idMaquina", "-")}";
         estadoRedText.text = $"Red: {machine.GetValueOrDefault("estadoRed", "-")}";
         estadoMaquinaText.text = $"Estado Máquina: {estadoMaquinaStr}";
@@ -80,6 +79,29 @@ public class MachineUIManager : MonoBehaviour
     {
         if (detailPanel != null)
             detailPanel.SetActive(false);
+    }
+
+    // 👉 Métodos para botones
+    public void NextMachine()
+    {
+        if (MachineReader.Machines == null || MachineReader.Machines.Count == 0) return;
+
+        currentIndex++;
+        if (currentIndex >= MachineReader.Machines.Count)
+            currentIndex = 0; // volver al inicio
+
+        ShowMachineDetail(currentIndex);
+    }
+
+    public void PreviousMachine()
+    {
+        if (MachineReader.Machines == null || MachineReader.Machines.Count == 0) return;
+
+        currentIndex--;
+        if (currentIndex < 0)
+            currentIndex = MachineReader.Machines.Count - 1; // ir al último
+
+        ShowMachineDetail(currentIndex);
     }
 }
 
