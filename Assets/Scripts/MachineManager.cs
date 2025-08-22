@@ -171,6 +171,7 @@ public class MachineManager : MonoBehaviour
         var binding = machines.Find(m => m.machineId == machineId);
         if (binding != null)
         {
+            binding.manualOverride = true;
             binding.overrideTimer = 0f;
         }
     }
