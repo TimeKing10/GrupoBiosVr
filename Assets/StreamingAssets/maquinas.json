@@ -1,0 +1,60 @@
+{
+    "Maquinas": [
+        {
+            "IdMaquina": "PQ0",
+            "Estado": 1,
+            "Producto": "Mirringo",
+            "ProdPorMinuto": 999999986991104.0,
+            "CantProducido": 0
+        },
+        {
+            "IdMaquina": "PQ1",
+            "Estado": 1,
+            "Producto": "Mirringo",
+            "ProdPorMinuto": 10000.0,
+            "CantProducido": 1
+        },
+        {
+            "IdMaquina": "",
+            "Estado": 0,
+            "Producto": "",
+            "ProdPorMinuto": 0.0,
+            "CantProducido": 0
+        },
+        {
+            "IdMaquina": "",
+            "Estado": 0,
+            "Producto": "",
+            "ProdPorMinuto": 0.0,
+            "CantProducido": 0
+        },
+        {
+            "IdMaquina": "",
+            "Estado": 0,
+            "Producto": "",
+            "ProdPorMinuto": 0.0,
+            "CantProducido": 0
+        },
+        {
+            "IdMaquina": "",
+            "Estado": 0,
+            "Producto": "",
+            "ProdPorMinuto": 0.0,
+            "CantProducido": 0
+        },
+        {
+            "IdMaquina": "",
+            "Estado": 0,
+            "Producto": "",
+            "ProdPorMinuto": 0.0,
+            "CantProducido": 0
+        },
+        {
+            "IdMaquina": "",
+            "Estado": 0,
+            "Producto": "",
+            "ProdPorMinuto": 0.0,
+            "CantProducido": 0
+        }
+    ]
+}
