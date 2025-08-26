@@ -128,6 +128,14 @@ public class MachineManager : MonoBehaviour
                         {
                             binding.manualOverride = false;
                             binding.overrideTimer = 0f;
+
+                            // 🔄 Forzar que el generador vuelva al JSON
+                            if (binding.generador != null)
+                            {
+                                binding.generador.ActualizarDesdeJSON();
+                            }
+
+                            Debug.Log($"⏱ Override terminado → {binding.machineId} vuelve al JSON");
                         }
                     }
 

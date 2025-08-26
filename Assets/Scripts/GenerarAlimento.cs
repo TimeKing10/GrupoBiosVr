@@ -100,7 +100,7 @@ public class GenerarAlimento : MonoBehaviour
         SeleccionarPrefab(1);
     }
 
-    private void SeleccionarPrefab(int indice)
+    public void SeleccionarPrefab(int indice)
     {
         if (indice >= 0 && indice < prefabs.Length)
         {
@@ -194,5 +194,27 @@ public class GenerarAlimento : MonoBehaviour
     {
         d.time = 0;
         d.Play();
+    }
+
+    public void ActualizarDesdeJSON()
+    {
+        if (MachineReader.Machines == null) return;
+
+        foreach (var machine in MachineReader.Machines)
+        {
+            if (machine.TryGetValue("idMaquina", out object id) && id.ToString() == machineId)
+            {
+                if (machine.TryGetValue("productoDescripcion", out object prodObj))
+                {
+                    string productoDescripcion = prodObj?.ToString() ?? "";
+                    if (!string.IsNullOrEmpty(productoDescripcion))
+                    {
+                        SeleccionarPorDescripcion(productoDescripcion);
+                        Debug.Log($"[GenerarAlimento] {machineId} volvió al producto del JSON → {productoDescripcion}");
+                    }
+                }
+                break;
+            }
+        }
     }
 }

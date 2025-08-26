@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4814991048576701372
+--- !u!1 &8173753405410669059
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7478254815317408643}
-  - component: {fileID: 6817655993104777757}
-  - component: {fileID: 3671780103948789874}
-  - component: {fileID: 4822297415995215257}
-  - component: {fileID: 3669771168512075344}
-  - component: {fileID: -2806108303767073709}
-  - component: {fileID: 6949924071403279874}
+  - component: {fileID: 1699552721901857862}
+  - component: {fileID: 2589319363157546537}
+  - component: {fileID: 6092237716979752743}
+  - component: {fileID: 3748534294718601763}
+  - component: {fileID: -1861238813674235922}
+  - component: {fileID: 7448169343138167411}
+  - component: {fileID: 3295077162468234544}
   m_Layer: 3
-  m_Name: VIVANCE VITALITY PERROS ADULTOS X 2 KG
+  m_Name: NUTRISS GATOS ADULT SALSA POLLO 1.275 K
   m_TagString: Bolsa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7478254815317408643
+--- !u!4 &1699552721901857862
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4814991048576701372}
+  m_GameObject: {fileID: 8173753405410669059}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.347511, y: -1.4727762, z: -9.638}
+  m_LocalPosition: {x: -24.347511, y: -1.4727762, z: -9.537}
   m_LocalScale: {x: 0.15139274, y: 0.37322298, z: 0.33581528}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6817655993104777757
+--- !u!33 &2589319363157546537
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4814991048576701372}
+  m_GameObject: {fileID: 8173753405410669059}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3671780103948789874
+--- !u!23 &6092237716979752743
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4814991048576701372}
+  m_GameObject: {fileID: 8173753405410669059}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42689f1b5660c1c43bbbc3208df3ec8d, type: 2}
+  - {fileID: 2100000, guid: c9648deec405fea41b193d0c7deaf935, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,13 +90,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4822297415995215257
+--- !u!65 &3748534294718601763
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4814991048576701372}
+  m_GameObject: {fileID: 8173753405410669059}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -111,13 +111,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3669771168512075344
+--- !u!54 &-1861238813674235922
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4814991048576701372}
+  m_GameObject: {fileID: 8173753405410669059}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -138,13 +138,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-2806108303767073709
+--- !u!114 &7448169343138167411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4814991048576701372}
+  m_GameObject: {fileID: 8173753405410669059}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
@@ -260,20 +260,20 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!114 &6949924071403279874
+--- !u!114 &3295077162468234544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4814991048576701372}
+  m_GameObject: {fileID: 8173753405410669059}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Interactable: {fileID: 0}
-  m_PokeCollider: {fileID: 4822297415995215257}
+  m_PokeCollider: {fileID: 3748534294718601763}
   m_PokeConfiguration:
     m_UseConstant: 1
     m_ConstantValue:
