@@ -71,15 +71,12 @@ public class GenerarAlimento : MonoBehaviour
         while (tokens.Count > 0)
         {
             string last = tokens[tokens.Count - 1];
+
             if (Regex.IsMatch(last, @"^\d+(\.\d+)?K$") ||
                 Regex.IsMatch(last, @"^\d+(\.\d+)?KG$") ||
                 Regex.IsMatch(last, @"^\d+(\.\d+)?$") ||
-                Regex.IsMatch(last, @"^[\d,]+$"))
-            {
-                tokens.RemoveAt(tokens.Count - 1);
-                continue;
-            }
-            if (last.EndsWith("K") && Regex.IsMatch(last.Substring(0, last.Length - 1), @"^\d+(\.\d+)?$"))
+                Regex.IsMatch(last, @"^[\d,]+$") ||
+                last == "UNID" || last == "UNIDS")
             {
                 tokens.RemoveAt(tokens.Count - 1);
                 continue;
@@ -87,8 +84,12 @@ public class GenerarAlimento : MonoBehaviour
             break;
         }
 
+        // ❌ Eliminar la "X" que aparece como multiplicador
+        tokens.RemoveAll(t => t == "X");
+
         return string.Join(" ", tokens).Trim();
     }
+
 
     public void SeleccionarAlimento1()
     {

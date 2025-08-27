@@ -6533,6 +6533,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 19ab8c6b4953a494b97c0e44b3ec70f6, type: 3}
   - {fileID: 21300000, guid: 8746e85217ee4cd48a6492eb8dae90b1, type: 3}
   - {fileID: 21300000, guid: c4be23026b23c214f9dd4cfd6eadcb4d, type: 3}
+  - {fileID: 21300000, guid: 8746e85217ee4cd48a6492eb8dae90b1, type: 3}
+  - {fileID: 21300000, guid: 752033241b0de89459a78ed21065ba15, type: 3}
   generador: {fileID: 5523080426928891308}
   machineManager: {fileID: 0}
 --- !u!1 &5489634326967979761
@@ -7245,6 +7247,8 @@ MonoBehaviour:
   - {fileID: 3242741096763268019, guid: 829e7d9c853f3984296b0b1e9534a505, type: 3}
   - {fileID: 8945112486874978090, guid: 1596e41e5b9610546809b4c98ac69999, type: 3}
   - {fileID: 4814991048576701372, guid: 42f1095ec94e70b4ba94b4fcee78fb8c, type: 3}
+  - {fileID: 6006904043175364642, guid: ca433523b623a184099802ec2fbbe237, type: 3}
+  - {fileID: 3885874704987448364, guid: a64188ff50731184484098e26eddd892, type: 3}
   puntoSpawn: {fileID: 728752469960964701}
   director: {fileID: 0}
   prefabSeleccionado: 0
