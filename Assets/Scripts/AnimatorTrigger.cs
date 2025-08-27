@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class AnimatorTrigger : MonoBehaviour
 {
-    [SerializeField] private Animator animator; // Referencia al Animator
+    [SerializeField] private Animator animatorRightDoor; // Referencia al Animator
+    [SerializeField] private Animator animatorLeftDoor; // Referencia al Animator
 
     // Método para activar el trigger "Open"
     public void ActivateOpen()
     {
-        if (animator != null)
+        if (animatorRightDoor != null && animatorLeftDoor != null)
         {
-            animator.SetTrigger("Open");
+            animatorRightDoor.SetTrigger("Open");
+            animatorLeftDoor.SetTrigger("Open");
         }
         else
         {
