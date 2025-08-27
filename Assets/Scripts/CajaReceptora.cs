@@ -24,11 +24,9 @@ public class CajaReceptora : MonoBehaviour
                 if (masViejo != null)
                 {
                     Destroy(masViejo);
-                    Debug.Log("🗑️ Caja llena → se eliminó el alimento más viejo.");
                 }
             }
 
-            Debug.Log($"📦 Caja contiene {alimentosEnCaja.Count} alimentos");
         }
     }
 }

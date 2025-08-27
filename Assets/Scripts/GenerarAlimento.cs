@@ -28,7 +28,7 @@ public class GenerarAlimento : MonoBehaviour
 
     void Start()
     {
-        var mm = FindObjectOfType<MachineManager>();
+        var mm = FindFirstObjectByType<MachineManager>();
         if (mm != null)
             mm.RegisterGenerador(this);
 
@@ -84,7 +84,7 @@ public class GenerarAlimento : MonoBehaviour
             break;
         }
 
-        // ❌ Eliminar la "X" que aparece como multiplicador
+        
         tokens.RemoveAll(t => t == "X");
 
         return string.Join(" ", tokens).Trim();
@@ -106,11 +106,7 @@ public class GenerarAlimento : MonoBehaviour
         if (indice >= 0 && indice < prefabs.Length)
         {
             prefabSeleccionado = indice;
-            Debug.Log($"[GenerarAlimento:{gameObject.name}] Prefab seleccionado manualmente: {prefabs[indice].name}");
-        }
-        else
-        {
-            Debug.LogWarning($"[GenerarAlimento:{gameObject.name}] Índice de prefab fuera de rango.");
+            
         }
     }
 
@@ -119,7 +115,7 @@ public class GenerarAlimento : MonoBehaviour
         string baseName = ExtractBaseName(productoDescripcion);
         if (string.IsNullOrEmpty(baseName))
         {
-            Debug.LogWarning($"[GenerarAlimento:{gameObject.name}] Descripción vacía al intentar seleccionar prefab.");
+            
             return;
         }
 
@@ -128,7 +124,7 @@ public class GenerarAlimento : MonoBehaviour
         if (lookupByName.TryGetValue(key, out int idx))
         {
             prefabSeleccionado = idx;
-            Debug.Log($"[GenerarAlimento:{gameObject.name}] Seleccionado automáticamente prefab '{prefabs[idx].name}' para '{productoDescripcion}' (base='{baseName}').");
+            
             return;
         }
 
@@ -137,19 +133,19 @@ public class GenerarAlimento : MonoBehaviour
             if (key.Contains(kv.Key) || kv.Key.Contains(key))
             {
                 prefabSeleccionado = kv.Value;
-                Debug.Log($"[GenerarAlimento:{gameObject.name}] Fallback: seleccionado '{prefabs[kv.Value].name}' para '{productoDescripcion}'.");
+                
                 return;
             }
         }
 
-        Debug.LogWarning($"[GenerarAlimento:{gameObject.name}] No se encontró prefab para '{productoDescripcion}' (base='{baseName}').");
+        
     }
 
     public void CrearBolsa()
     {
         if (bolsaActual != null)
         {
-            Debug.Log($"[GenerarAlimento:{gameObject.name}] Ya hay una bolsa en el gancho, no se crea otra.");
+            
             return;
         }
 
@@ -161,14 +157,14 @@ public class GenerarAlimento : MonoBehaviour
                 bolsaActual = obj.gameObject;
                 bolsaActual.transform.SetParent(puntoSpawn);
                 if (bolsaActual.TryGetComponent<Rigidbody>(out Rigidbody rb)) rb.isKinematic = true;
-                Debug.Log($"[GenerarAlimento:{gameObject.name}] Reutilizando bolsa existente: {bolsaActual.name}");
+                
                 return;
             }
         }
 
         if (prefabSeleccionado < 0 || prefabSeleccionado >= prefabs.Length)
         {
-            Debug.LogWarning($"[GenerarAlimento:{gameObject.name}] Prefab seleccionado inválido.");
+            
             return;
         }
 
@@ -177,7 +173,7 @@ public class GenerarAlimento : MonoBehaviour
         if (bolsaActual.TryGetComponent<Rigidbody>(out Rigidbody rbNew))
             rbNew.isKinematic = true;
 
-        Debug.Log($"[GenerarAlimento:{gameObject.name}] Creada bolsa: {prefabs[prefabSeleccionado].name}");
+        
     }
 
     public void SoltarBolsa()
@@ -186,7 +182,7 @@ public class GenerarAlimento : MonoBehaviour
         {
             rb.isKinematic = false;
             bolsaActual.transform.parent = null;
-            Debug.Log($"[GenerarAlimento:{gameObject.name}] Soltada bolsa: {bolsaActual.name}");
+            
             bolsaActual = null;
         }
     }
@@ -211,7 +207,7 @@ public class GenerarAlimento : MonoBehaviour
                     if (!string.IsNullOrEmpty(productoDescripcion))
                     {
                         SeleccionarPorDescripcion(productoDescripcion);
-                        Debug.Log($"[GenerarAlimento] {machineId} volvió al producto del JSON → {productoDescripcion}");
+                        
                     }
                 }
                 break;

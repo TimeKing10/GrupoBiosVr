@@ -13,6 +13,9 @@ public class BarrelTrigger : MonoBehaviour
     public AudioSource Grito;    
     public float gritoDelay = 0.5f; // ⏳ Retraso del grito
 
+    [Header("Cambio de escena")]
+    public string nextSceneName;    // Nombre de la escena a cargar (configurable en el inspector)
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -33,12 +36,12 @@ public class BarrelTrigger : MonoBehaviour
                 fadeImage.color = c;
             }
 
-            // Iniciar recarga cuando termine el grito (o un fallback si no hay grito)
-            StartCoroutine(ReloadAfterAudio());
+            // Iniciar cambio de escena cuando termine el grito
+            StartCoroutine(LoadSceneAfterAudio());
         }
     }
 
-    private IEnumerator ReloadAfterAudio()
+    private IEnumerator LoadSceneAfterAudio()
     {
         float waitTime = 1f; // tiempo mínimo en caso de no haber grito
 
@@ -50,6 +53,15 @@ public class BarrelTrigger : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // Si escribiste el nombre en el inspector -> cargar esa escena
+        if (!string.IsNullOrEmpty(nextSceneName))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            // Fallback: si no se asigna, recarga la misma escena
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
