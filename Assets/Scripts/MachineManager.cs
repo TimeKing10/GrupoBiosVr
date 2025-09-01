@@ -77,11 +77,11 @@ public class MachineManager : MonoBehaviour
             if (match != null)
             {
                 binding.generador = match;
-                Debug.Log($"[MachineManager] Auto-asignado GenerarAlimento '{match.gameObject.name}' -> binding {binding.machineId}");
+                
             }
             else
             {
-                Debug.LogWarning($"[MachineManager] No se encontró GenerarAlimento para binding {binding.machineId}");
+                
             }
         }
     }
@@ -91,16 +91,19 @@ public class MachineManager : MonoBehaviour
         foreach (var b in machines)
         {
             string genName = b.generador != null ? b.generador.gameObject.name : "NONE";
-            Debug.Log($"[MachineManager] Binding {b.machineId} -> Generador: {genName}");
+            
         }
     }
 
     void Update()
     {
+        
+        
         if (MachineReader.Machines == null) return;
 
         foreach (var binding in machines)
         {
+            
             foreach (var machine in MachineReader.Machines)
             {
                 if (machine.TryGetValue("idMaquina", out object id) && id.ToString() == binding.machineId)
@@ -115,9 +118,10 @@ public class MachineManager : MonoBehaviour
                     {
                         if (!string.IsNullOrEmpty(productoDescripcion) && productoDescripcion != binding.previousProducto)
                         {
+
                             binding.generador.SeleccionarPorDescripcion(productoDescripcion);
                             binding.previousProducto = productoDescripcion;
-                            Debug.Log($"[MachineManager] {binding.machineId} -> seleccionado prefab para: {productoDescripcion}");
+
                         }
                     }
 
@@ -251,14 +255,22 @@ public class MachineManager : MonoBehaviour
     }
 
     public void ResetOverrideTimer(string machineId)
+{
+    var binding = machines.Find(m => m.machineId == machineId);
+
+    if (binding != null)
     {
-        var binding = machines.Find(m => m.machineId == machineId);
-        if (binding != null)
-        {
-            binding.manualOverride = true;
-            binding.overrideTimer = 0f;
-        }
+        binding.manualOverride = true;
+        binding.overrideTimer = 0f;
+        
     }
+    else
+    {
+        
+        foreach (var b in machines)
+            Debug.Log($"- {b.machineId}");
+    }
+}
 
     public void RegisterGenerador(GenerarAlimento gen)
     {
@@ -267,7 +279,7 @@ public class MachineManager : MonoBehaviour
         if (binding != null)
         {
             binding.generador = gen;
-            Debug.Log($"[MachineManager] RegisterGenerador: asignado {gen.gameObject.name} a binding {binding.machineId}");
+    
         }
     }
 }

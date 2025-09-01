@@ -54,7 +54,6 @@ public class FoodUI : MonoBehaviour
             machineManager.ResetOverrideTimer(generador.machineId);
         }
 
-        Debug.Log($"✅ Manual → seleccionado {foodSprites[currentIndex]?.name}");
     }
 
     private void SelectCurrent()

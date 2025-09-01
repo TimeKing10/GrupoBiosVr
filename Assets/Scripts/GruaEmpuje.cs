@@ -38,8 +38,10 @@ public class GruaEmpuje : MonoBehaviour
                 direccion.y = 0.5f; // un poco hacia arriba
                 rb.AddForce(direccion * fuerza, ForceMode.Impulse);
 
-                // Usamos StartCoroutine desde ESTE script
-                StartCoroutine(RecuperarControl(cc, rb, 1.5f));
+                // 👉 IMPORTANTE: quitar el trigger de este collider
+                Collider col = GetComponent<Collider>();
+                if (col != null)
+                    col.isTrigger = false;
             }
 
             // Reproducir sonidos
@@ -53,18 +55,6 @@ public class GruaEmpuje : MonoBehaviour
             // Cambio de escena
             StartCoroutine(LoadSceneAfterAudio());
         }
-    }
-
-    private IEnumerator RecuperarControl(CharacterController cc, Rigidbody rb, float tiempo)
-    {
-        yield return new WaitForSeconds(tiempo);
-
-        // Frenar movimiento residual
-        rb.linearVelocity = Vector3.zero;
-
-        // Volver al CharacterController
-        rb.isKinematic = true;
-        cc.enabled = true;
     }
 
     private IEnumerator FadeIn()
