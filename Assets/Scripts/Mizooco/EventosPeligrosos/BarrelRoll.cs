@@ -32,4 +32,10 @@ public class BarrelRoll : MonoBehaviour
         rb.isKinematic = false;  // Activar física
         rb.useGravity = true;    // Activar gravedad
     }
+
+    public void Metoco()
+    {
+        Debug.Log("Me alcanzo el rayo");
+        Destroy(gameObject);
+    }
 }
