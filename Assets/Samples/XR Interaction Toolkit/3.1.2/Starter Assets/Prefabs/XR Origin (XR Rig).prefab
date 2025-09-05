@@ -679,6 +679,7 @@ MonoBehaviour:
     m_ManualValue: {x: 0, y: 0}
   m_UseGravity: 1
   m_HeadTransform: {fileID: 1767192434}
+  animator: {fileID: 0}
   m_LeftControllerTransform: {fileID: 202364688}
   m_RightControllerTransform: {fileID: 1670256625}
   m_LeftHandMovementDirection: 0

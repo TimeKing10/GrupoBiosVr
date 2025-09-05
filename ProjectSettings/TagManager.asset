@@ -8,6 +8,7 @@ TagManager:
   - Bolsa
   - Interactuable
   - Peligro
+  - Hand
   layers:
   - Default
   - TransparentFX
