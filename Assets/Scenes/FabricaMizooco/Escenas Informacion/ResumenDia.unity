@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fda8a33d03b1b04ca379f0db96ab396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscena: FabricaMizooco
+  nombreEscena: Inicio
 --- !u!4 &852551100
 Transform:
   m_ObjectHideFlags: 0

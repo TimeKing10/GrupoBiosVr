@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/FabricaMizooco/Escenas Informacion/Inicio.unity
+    guid: 3d5e72d42e9ee444db57e29e4cd5ab07
+  - enabled: 1
     path: Assets/Scenes/FabricaMizooco/FabricaMizooco.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/FabricaMizooco/Escenas Informacion/EquipoProteccion.unity
-    guid: 6f947a540a954f04da37ab4e7c41c902
+    guid: ea22d398d2522a543992ee3b311097bd
   - enabled: 1
     path: Assets/Scenes/FabricaMizooco/Escenas Informacion/Choque.unity
     guid: 117ec305dc64ba94eaf42c296a004fcf

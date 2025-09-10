@@ -9874,6 +9874,8 @@ Transform:
   - {fileID: 1038020440}
   - {fileID: 1991029308}
   - {fileID: 1970509843}
+  - {fileID: 1260902208}
+  - {fileID: 650318314}
   m_Father: {fileID: 436933959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164662615
@@ -32379,8 +32381,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 570894359}
-  - {fileID: 650318314}
-  - {fileID: 1260902208}
   - {fileID: 813608984}
   - {fileID: 6083935692787368324}
   - {fileID: 428380740}
@@ -61860,7 +61860,19 @@ MonoBehaviour:
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1148794226}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: SetBarril
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -113219,7 +113231,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 436933959}
+    m_TransformParent: {fileID: 163080767}
     m_Modifications:
     - target: {fileID: 2691549628323001401, guid: ecad917932b04754ca77ddba10590332, type: 3}
       propertyPath: m_LocalScale.x
@@ -131721,8 +131733,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1148794224}
   - component: {fileID: 1148794225}
+  - component: {fileID: 1148794226}
   m_Layer: 0
-  m_Name: PuntosElementosPeligorosos
+  m_Name: ManagerLogros
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131736,12 +131749,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148794223}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.1469789, y: 1.4727762, z: 7.8166776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1342612226}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1148794225
 MonoBehaviour:
@@ -131756,6 +131769,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contador: 0
+--- !u!114 &1148794226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148794223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19442796e13389e4f923546b6bad7362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrilDetectado: 0
+  charcoDetectado: 0
+  montacargasDetectado: 0
+  maquinaDetectada: 0
 --- !u!1 &1149081182
 GameObject:
   m_ObjectHideFlags: 0
@@ -149343,10 +149372,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -11.205362, y: 2.6372318, z: -2.6389732}
-  m_LocalScale: {x: 0.42097232, y: 0.42097226, z: 0.42097232}
+  m_LocalScale: {x: 0.42097235, y: 0.42097226, z: 0.42097235}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 436933959}
+  m_Father: {fileID: 163080767}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!82 &1260902209
 AudioSource:
@@ -149550,6 +149579,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1148794226}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: SetCharco
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1260902204}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -154948,7 +154989,6 @@ Transform:
   - {fileID: 6854480860366964968}
   - {fileID: 2100559135}
   - {fileID: 246674826}
-  - {fileID: 1148794224}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1342871365
@@ -213275,6 +213315,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1148794226}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: SetMaquina
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1148794225}
         m_TargetAssemblyTypeName: ContadorManager, Assembly-CSharp
         m_MethodName: SumarEvento
@@ -248968,6 +249020,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1148794226}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: SetMontacargas
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1148794225}
         m_TargetAssemblyTypeName: ContadorManager, Assembly-CSharp
         m_MethodName: SumarEvento
@@ -249095,11 +249159,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.547
+      value: 18.47
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.034857582
+      value: -0.9987111
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -249107,7 +249171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9993923
+      value: 0.050756153
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.z
@@ -249119,7 +249183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 536.005
+      value: 354.181
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -249477,3 +249541,4 @@ SceneRoots:
   - {fileID: 688773640}
   - {fileID: 263687947}
   - {fileID: 1342612226}
+  - {fileID: 1148794224}

@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fda8a33d03b1b04ca379f0db96ab396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscena: FabricaMizooco
+  nombreEscena: Inicio
 --- !u!4 &852551100
 Transform:
   m_ObjectHideFlags: 0
@@ -8291,6 +8291,7 @@ MonoBehaviour:
     m_ManualValue: {x: 0, y: 0}
   m_UseGravity: 1
   m_HeadTransform: {fileID: 9150460890830117261}
+  animator: {fileID: 0}
   m_LeftControllerTransform: {fileID: 9150460889274677743}
   m_RightControllerTransform: {fileID: 9150460891011201294}
   m_LeftHandMovementDirection: 0
