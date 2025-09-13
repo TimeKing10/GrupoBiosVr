@@ -24,10 +24,7 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        Debug.Log(barrilDetectado);
-    }
+    
 
     // Métodos de acceso (opcionales, para mayor claridad)
     public void SetBarril(bool value) => barrilDetectado = value;
