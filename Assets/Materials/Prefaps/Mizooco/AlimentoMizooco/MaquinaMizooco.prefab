@@ -3059,6 +3059,7 @@ GameObject:
   - component: {fileID: 1056417953401131892}
   - component: {fileID: 8032614476400297536}
   - component: {fileID: 5110192766421303364}
+  - component: {fileID: 929009268807028366}
   m_Layer: 5
   m_Name: UI_maquinaMizooco
   m_TagString: Untagged
@@ -3168,6 +3169,20 @@ MonoBehaviour:
   foodSprites: []
   generador: {fileID: 0}
   machineManager: {fileID: 0}
+--- !u!114 &929009268807028366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206801252104371129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21119720c1772c24fb8f9b0b48449322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoText: {fileID: 2338703748903689963}
+  machineIndex: 0
 --- !u!1 &2335391759170698654
 GameObject:
   m_ObjectHideFlags: 0
