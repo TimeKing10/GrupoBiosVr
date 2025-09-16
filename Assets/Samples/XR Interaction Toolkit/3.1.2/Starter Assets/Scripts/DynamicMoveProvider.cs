@@ -34,10 +34,6 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         [Tooltip("Directs the XR Origin's movement when using the head-relative mode. If not set, will automatically find and use the XR Origin Camera.")]
         Transform m_HeadTransform;
 
-        [Header("Animator")]
-        [SerializeField] private Animator animator;
-        private readonly int WalkHash = Animator.StringToHash("Walk");
-
         /// <summary>
         /// Directs the XR Origin's movement when using the head-relative mode. If not set, will automatically find and use the XR Origin Camera.
         /// </summary>
@@ -116,70 +112,79 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         }
 
         /// <inheritdoc />
-    
-
-protected override Vector3 ComputeDesiredMove(Vector2 input)
-{
-    // Actualizamos el Animator según el input
-    if (animator != null)
-    {
-        bool isWalking = input != Vector2.zero;
-        animator.SetBool(WalkHash, isWalking);
-    }
-
-    // --- Aquí sigue toda tu lógica original ---
-    if (input == Vector2.zero)
-        return base.ComputeDesiredMove(input);
-
-    if (m_HeadTransform == null)
-    {
-        var xrOrigin = mediator.xrOrigin;
-        if (xrOrigin != null)
+        protected override Vector3 ComputeDesiredMove(Vector2 input)
         {
-            var xrCamera = xrOrigin.Camera;
-            if (xrCamera != null)
-                m_HeadTransform = xrCamera.transform;
+            // Don't need to do anything if the total input is zero.
+            // This is the same check as the base method.
+            if (input == Vector2.zero)
+                return base.ComputeDesiredMove(input);
+
+            // Initialize the Head Transform if necessary, getting the Camera from XR Origin
+            if (m_HeadTransform == null)
+            {
+                var xrOrigin = mediator.xrOrigin;
+                if (xrOrigin != null)
+                {
+                    var xrCamera = xrOrigin.Camera;
+                    if (xrCamera != null)
+                        m_HeadTransform = xrCamera.transform;
+                }
+            }
+
+            // Get the forward source for the left hand input
+            switch (m_LeftHandMovementDirection)
+            {
+                case MovementDirection.HeadRelative:
+                    if (m_HeadTransform != null)
+                        m_LeftMovementPose = m_HeadTransform.GetWorldPose();
+
+                    break;
+
+                case MovementDirection.HandRelative:
+                    if (m_LeftControllerTransform != null)
+                        m_LeftMovementPose = m_LeftControllerTransform.GetWorldPose();
+
+                    break;
+
+                default:
+                    Assert.IsTrue(false, $"Unhandled {nameof(MovementDirection)}={m_LeftHandMovementDirection}");
+                    break;
+            }
+
+            // Get the forward source for the right hand input
+            switch (m_RightHandMovementDirection)
+            {
+                case MovementDirection.HeadRelative:
+                    if (m_HeadTransform != null)
+                        m_RightMovementPose = m_HeadTransform.GetWorldPose();
+
+                    break;
+
+                case MovementDirection.HandRelative:
+                    if (m_RightControllerTransform != null)
+                        m_RightMovementPose = m_RightControllerTransform.GetWorldPose();
+
+                    break;
+
+                default:
+                    Assert.IsTrue(false, $"Unhandled {nameof(MovementDirection)}={m_RightHandMovementDirection}");
+                    break;
+            }
+
+            // Combine the two poses into the forward source based on the magnitude of input
+            var leftHandValue = leftHandMoveInput.ReadValue();
+            var rightHandValue = rightHandMoveInput.ReadValue();
+
+            var totalSqrMagnitude = leftHandValue.sqrMagnitude + rightHandValue.sqrMagnitude;
+            var leftHandBlend = 0.5f;
+            if (totalSqrMagnitude > Mathf.Epsilon)
+                leftHandBlend = leftHandValue.sqrMagnitude / totalSqrMagnitude;
+
+            var combinedPosition = Vector3.Lerp(m_RightMovementPose.position, m_LeftMovementPose.position, leftHandBlend);
+            var combinedRotation = Quaternion.Slerp(m_RightMovementPose.rotation, m_LeftMovementPose.rotation, leftHandBlend);
+            m_CombinedTransform.SetPositionAndRotation(combinedPosition, combinedRotation);
+
+            return base.ComputeDesiredMove(input);
         }
-    }
-
-    switch (m_LeftHandMovementDirection)
-    {
-        case MovementDirection.HeadRelative:
-            if (m_HeadTransform != null)
-                m_LeftMovementPose = m_HeadTransform.GetWorldPose();
-            break;
-        case MovementDirection.HandRelative:
-            if (m_LeftControllerTransform != null)
-                m_LeftMovementPose = m_LeftControllerTransform.GetWorldPose();
-            break;
-    }
-
-    switch (m_RightHandMovementDirection)
-    {
-        case MovementDirection.HeadRelative:
-            if (m_HeadTransform != null)
-                m_RightMovementPose = m_HeadTransform.GetWorldPose();
-            break;
-        case MovementDirection.HandRelative:
-            if (m_RightControllerTransform != null)
-                m_RightMovementPose = m_RightControllerTransform.GetWorldPose();
-            break;
-    }
-
-    var leftHandValue = leftHandMoveInput.ReadValue();
-    var rightHandValue = rightHandMoveInput.ReadValue();
-
-    var totalSqrMagnitude = leftHandValue.sqrMagnitude + rightHandValue.sqrMagnitude;
-    var leftHandBlend = 0.5f;
-    if (totalSqrMagnitude > Mathf.Epsilon)
-        leftHandBlend = leftHandValue.sqrMagnitude / totalSqrMagnitude;
-
-    var combinedPosition = Vector3.Lerp(m_RightMovementPose.position, m_LeftMovementPose.position, leftHandBlend);
-    var combinedRotation = Quaternion.Slerp(m_RightMovementPose.rotation, m_LeftMovementPose.rotation, leftHandBlend);
-    m_CombinedTransform.SetPositionAndRotation(combinedPosition, combinedRotation);
-
-    return base.ComputeDesiredMove(input);
-}
-
     }
 }

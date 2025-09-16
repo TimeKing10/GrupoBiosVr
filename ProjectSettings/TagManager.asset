@@ -9,6 +9,9 @@ TagManager:
   - Interactuable
   - Peligro
   - Hand
+  - Alimento
+  - RightHand
+  - LeftHand
   layers:
   - Default
   - TransparentFX
