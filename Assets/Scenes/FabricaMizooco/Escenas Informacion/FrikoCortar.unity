@@ -24282,7 +24282,7 @@ MonoBehaviour:
   audio2: {fileID: 1178545414}
   fadeImage: {fileID: 998667103}
   fadeDuration: 1.5
-  nombreEscena: FrikoCortar
+  nombreEscena: RiesgoMaquina
 --- !u!114 &358954812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38022,7 +38022,7 @@ Transform:
   m_GameObject: {fileID: 562015037}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.43715, y: 2.5291667, z: 12.174839}
+  m_LocalPosition: {x: 2.43715, y: 2.5291667, z: 14.61}
   m_LocalScale: {x: 0.2517, y: 9.883182, z: 15.664424}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41979,7 +41979,7 @@ MonoBehaviour:
   fadeImage: {fileID: 998667103}
   fadeDuration: 1.5
   sonido: {fileID: 625896499}
-  nombreEscena: FrikoCortar
+  nombreEscena: RiesgoCuchillo
 --- !u!65 &625896498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51310,7 +51310,7 @@ MonoBehaviour:
   audio2: {fileID: 1178545414}
   fadeImage: {fileID: 998667103}
   fadeDuration: 1.5
-  nombreEscena: FrikoCortar
+  nombreEscena: RiesgoMaquina
 --- !u!65 &795895772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62663,7 +62663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &998667102
 RectTransform:
   m_ObjectHideFlags: 0
@@ -68651,7 +68651,7 @@ Transform:
   m_GameObject: {fileID: 1086327544}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.43715, y: 2.5291667, z: -3.0351617}
+  m_LocalPosition: {x: 2.44, y: 2.5291667, z: -6.86}
   m_LocalScale: {x: 0.2517, y: 9.883182, z: 15.664424}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84029,8 +84029,8 @@ Transform:
   m_GameObject: {fileID: 1331843695}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6324496, y: 2.5291667, z: 4.4539385}
-  m_LocalScale: {x: 0.2517, y: 9.883182, z: 15.664424}
+  m_LocalPosition: {x: -5.04, y: 2.5291667, z: 4.0776}
+  m_LocalScale: {x: 0.2517, y: 9.883182, z: 22.596804}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1307309146}
@@ -87013,7 +87013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1385327227
 RectTransform:
   m_ObjectHideFlags: 0
@@ -87030,8 +87030,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -44.2, y: 14.8}
-  m_SizeDelta: {x: 50.1, y: 55.3}
+  m_AnchoredPosition: {x: -55.5, y: 41.6}
+  m_SizeDelta: {x: 47, y: 50.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385327228
 MonoBehaviour:

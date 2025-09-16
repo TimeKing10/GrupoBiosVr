@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/FabricaMizooco/Escenas Informacion/Inicio.unity
     guid: 3d5e72d42e9ee444db57e29e4cd5ab07
   - enabled: 1
-    path: Assets/Scenes/FabricaMizooco/FabricaMizooco.unity
+    path: Assets/Scenes/FabricaMizooco/Escenas Informacion/FabricaMizooco.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/FabricaMizooco/Escenas Informacion/EquipoProteccion.unity
@@ -23,6 +23,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FabricaMizooco/Escenas Informacion/Maquina.unity
     guid: 967da72e9344b1b43ab3eefff755c078
+  - enabled: 1
+    path: Assets/Scenes/FabricaMizooco/Escenas Informacion/RiesgoCuchillo.unity
+    guid: 19f1eece2896bf94ba9e6453157b5883
+  - enabled: 1
+    path: Assets/Scenes/FabricaMizooco/Escenas Informacion/RiesgoMaquina.unity
+    guid: 6058afcc8b90b5444afb5bd45d00d6e2
+  - enabled: 1
+    path: Assets/Scenes/FabricaMizooco/Escenas Informacion/SelecionarMapa.unity
+    guid: ca4e9af318850974ca6740d99d78a11b
+  - enabled: 1
+    path: Assets/Scenes/FabricaMizooco/Escenas Informacion/FrikoCortar.unity
+    guid: c510c987708edc94e9289cf779c8a158
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
