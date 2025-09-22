@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Anchor
   - Bolsa
+  - Interactuable
+  - Peligro
+  - Hand
+  - Alimento
+  - RightHand
+  - LeftHand
+  - Cuchillo
   layers:
   - Default
   - TransparentFX
@@ -13,8 +20,8 @@ TagManager:
   - AlimentoMizooco
   - Water
   - UI
-  - 
-  - 
+  - Piso
+  - Peligro
   - 
   - 
   - 
