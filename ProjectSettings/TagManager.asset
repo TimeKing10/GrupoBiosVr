@@ -12,6 +12,7 @@ TagManager:
   - Alimento
   - RightHand
   - LeftHand
+  - Cuchillo
   layers:
   - Default
   - TransparentFX
