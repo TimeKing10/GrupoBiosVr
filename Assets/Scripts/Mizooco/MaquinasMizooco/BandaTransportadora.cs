@@ -18,8 +18,14 @@ public class BandaTransportadora : MonoBehaviour
         alimentoLayer = LayerMask.NameToLayer(layerAlimento);
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Colisión detectada con: " + collision.gameObject.name);
+
+    }
     private void OnCollisionStay(Collision collision)
     {
+        Debug.Log("Colisión detectada con: " + collision.gameObject.name);
         GameObject obj = collision.gameObject;
 
         // Verificar si cumple una de las dos condiciones (tag O layer)
