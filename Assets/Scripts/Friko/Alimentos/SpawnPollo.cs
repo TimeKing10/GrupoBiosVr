@@ -12,9 +12,14 @@ public class SpawnPollo : MonoBehaviour
     [Header("Tiempo entre instancias")]
     public float spawnDelay = 2f;
 
-    void Start()
+    public void Producir()
     {
         StartCoroutine(SpawnRoutine());
+    }
+
+    public void DetenerProduccion()
+    {
+        StopAllCoroutines();
     }
 
     IEnumerator SpawnRoutine()
