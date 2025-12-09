@@ -122,6 +122,8 @@ public class GameManagerXR : MonoBehaviour
         if (locomotion != null)
             locomotion.SetActive(false);
 
+        if (panelExito != null) panelExito.SetActive(true);    
+
         if (paquetesEntregados >= metaPaquetes)
         {
             if (panelExito != null) panelExito.SetActive(true);
