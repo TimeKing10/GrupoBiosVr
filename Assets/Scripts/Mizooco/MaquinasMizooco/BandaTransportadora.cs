@@ -10,6 +10,8 @@ public class BandaTransportadora : MonoBehaviour
     public string layerAlimento = "AlimentoMizooco"; // Nombre del Layer
     public string tagAlimento = "Alimento";         // Tag requerido
 
+    public string tagCanasta = "Canasta";           // Tag de cajas (no usado aquí pero reservado)
+
     private int alimentoLayer;
 
     void Start()
@@ -29,7 +31,7 @@ public class BandaTransportadora : MonoBehaviour
         GameObject obj = collision.gameObject;
 
         // Verificar si cumple una de las dos condiciones (tag O layer)
-        if (obj.CompareTag(tagAlimento) || obj.layer == alimentoLayer)
+        if (obj.CompareTag(tagAlimento) || obj.layer == alimentoLayer || obj.CompareTag(tagCanasta))
         {
             Rigidbody rb = collision.rigidbody;
             if (rb != null)

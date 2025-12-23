@@ -2,28 +2,38 @@ using UnityEngine;
 
 public class TriggerValidador : MonoBehaviour
 {
-    public GameManagerXR manager;  // Asignar en el inspector
+    public GameManagerXR manager;
+
+    [Header("Zonas de Teletransporte")]
+    public Transform zonaCanasta;
+    public Transform zonaDescarte;
 
     private void OnTriggerEnter(Collider other)
     {
-        // 1. Buscar si el objeto que entra tiene ContadorPadre
-        ContadorPadre contador = other.GetComponent<ContadorPadre>();
+        // 🔹 SI ES CANASTA
+        if (other.CompareTag("Contador"))
+        {
+            ContadorPaquetes contador = other.GetComponent<ContadorPaquetes>();
 
-        // 2. Si no lo tiene, salir sin hacer nada
-        if (contador == null)
+            if (contador != null && contador.cantidad > 0)
+            {
+                Debug.Log("Se sumo");
+                manager.SumarPaquete();
+                
+            }
+
+            // 🚚 Teletransportar canasta
+            // 🔄 Resetear paquetes visuales
+            contador.ResetearCanastaVisual();
+
             return;
+        }
+        if (other.CompareTag("Canasta"))
+        {
+            other.transform.position = zonaCanasta.position;
+            other.transform.rotation = zonaCanasta.rotation;
+        }
 
-        // 3. Si lo tiene, evaluar
-        if (contador.contador == 3)
-        {
-            // ➕ Suma paquete
-            manager.SumarPaquete();
-        }
-        else
-        {
-            // ➖ Solo resta si hay puntos
-            if (manager.paquetesEntregados > 0)
-                manager.RestarPaquete();
-        }
+        // 🔹 NO tocar otros objetos aquí
     }
 }

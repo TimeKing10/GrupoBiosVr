@@ -13,6 +13,9 @@ TagManager:
   - RightHand
   - LeftHand
   - Cuchillo
+  - Carro
+  - Canasta
+  - Contador
   layers:
   - Default
   - TransparentFX
