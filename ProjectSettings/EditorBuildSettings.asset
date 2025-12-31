@@ -6,44 +6,53 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas Informacion/Inicio.unity
+    path: Assets/Scenes/VR/Escenas/Inicio.unity
     guid: 3d5e72d42e9ee444db57e29e4cd5ab07
   - enabled: 1
     path: Assets/Scenes/AR/EscenaAR.unity
     guid: 2fad43e31523c564ba53f8862cc679c6
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas Informacion/FabricaMizooco.unity
+    path: Assets/Scenes/VR/Escenas/FabricaMizooco.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas Informacion/EquipoProteccion.unity
+    path: Assets/Scenes/VR/Escenas/EquipoProteccion.unity
     guid: ea22d398d2522a543992ee3b311097bd
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas Informacion/Choque.unity
+    path: Assets/Scenes/VR/Escenas/Choque.unity
     guid: 117ec305dc64ba94eaf42c296a004fcf
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas Informacion/ResumenDia.unity
+    path: Assets/Scenes/VR/Escenas/ResumenDia.unity
     guid: 7607912009015be48925a3c185637b64
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas Informacion/Maquina.unity
+    path: Assets/Scenes/VR/Escenas/Maquina.unity
     guid: 967da72e9344b1b43ab3eefff755c078
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas Informacion/RiesgoCuchillo.unity
+    path: Assets/Scenes/VR/Escenas/RiesgoCuchillo.unity
     guid: 19f1eece2896bf94ba9e6453157b5883
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas Informacion/RiesgoMaquina.unity
+    path: Assets/Scenes/VR/Escenas/RiesgoMaquina.unity
     guid: 6058afcc8b90b5444afb5bd45d00d6e2
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas Informacion/SelecionarMapa.unity
+    path: Assets/Scenes/VR/Escenas/SelecionarMapa.unity
     guid: ca4e9af318850974ca6740d99d78a11b
   - enabled: 1
-    path: Assets/Scenes/VR/Friko/FrikoCortar.unity
+    path: Assets/Scenes/VR/Escenas/FrikoCortar.unity
     guid: c510c987708edc94e9289cf779c8a158
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas Informacion/SeleccionarModo.unity
+    path: Assets/Scenes/VR/Escenas/SeleccionarModo.unity
     guid: 021b5a0b22064644bb9e1a23afc8501e
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas Informacion/FrikoEmpaque.unity
+    path: Assets/Scenes/VR/Escenas/FrikoEmpaque.unity
     guid: 7efd129bf961c064b8e8d972f849024a
+  - enabled: 1
+    path: Assets/Scenes/VR/Escenas/RiesgoCritico.unity
+    guid: 5edafdc5d7ea57544b4fc6912d41411f
+  - enabled: 1
+    path: Assets/Scenes/VR/Escenas/SeleccionarRiesgo.unity
+    guid: 7dd538ced40c0f54b925630f3a07113a
+  - enabled: 1
+    path: Assets/Scenes/VR/Escenas/SeleccionarTutorial.unity
+    guid: 2399144319675374e8de8965738ba853
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

@@ -13,6 +13,7 @@ public class TriggerReinicio : MonoBehaviour
     public RawImage fadeImage;
     public float fadeDuration = 1f;
 
+
     [Header("Escena")]
     public string nombreEscena; // Déjalo vacío para recargar la actual
 
@@ -20,7 +21,7 @@ public class TriggerReinicio : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!activado && other.CompareTag("LeftHand") || other.CompareTag("RightHand"))
+        if (!activado && other.CompareTag("LeftHand") || other.CompareTag("RightHand") || other.CompareTag("Player"))
         {
             activado = true;
 

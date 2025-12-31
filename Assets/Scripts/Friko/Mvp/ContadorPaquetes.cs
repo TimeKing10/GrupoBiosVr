@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class ContadorPaquetes : MonoBehaviour
 {
     [Header("Conteo")]
     public int cantidad = 0;
+    public int maximo = 7;
 
     [Header("Paquetes visuales (ordenados)")]
     public GameObject[] paquetesVisuales;
@@ -12,21 +14,22 @@ public class ContadorPaquetes : MonoBehaviour
     [Header("Zona para mandar paquetes reales (Alimento)")]
     public Transform zonaDescarte;
 
-    private HashSet<ContadorPadre> paquetesContados = new HashSet<ContadorPadre>();
+    [Header("UI")]
+    public TextMeshProUGUI textoContador;
 
+    private HashSet<ContadorPadre> paquetesContados = new HashSet<ContadorPadre>();
     private int indiceVisual = 0;
 
     private void Start()
     {
+        // Apagar visuales
         foreach (var p in paquetesVisuales)
         {
             if (p != null)
                 p.SetActive(false);
         }
-    }
-    void Update()
-    {
-        Debug.Log("ContadorPaquetes: Cantidad actual = " + cantidad);
+
+        ActualizarUI();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,7 +49,11 @@ public class ContadorPaquetes : MonoBehaviour
         if (contador.contador == 3 && !paquetesContados.Contains(contador))
         {
             paquetesContados.Add(contador);
-            cantidad++;
+
+            if (cantidad < maximo)
+                cantidad++;
+
+            ActualizarUI();
         }
 
         // 🚀 SIEMPRE tepear el alimento real
@@ -75,6 +82,12 @@ public class ContadorPaquetes : MonoBehaviour
         other.transform.rotation = zonaDescarte.rotation;
     }
 
+    private void ActualizarUI()
+    {
+        if (textoContador != null)
+            textoContador.text = cantidad + " / " + maximo;
+    }
+
     public void ResetearCanastaVisual()
     {
         cantidad = 0;
@@ -87,5 +100,6 @@ public class ContadorPaquetes : MonoBehaviour
         }
 
         paquetesContados.Clear();
+        ActualizarUI();
     }
 }
