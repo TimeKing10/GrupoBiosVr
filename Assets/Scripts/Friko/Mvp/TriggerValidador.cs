@@ -1,39 +1,73 @@
 using UnityEngine;
 using TMPro;
+
 public class TriggerValidador : MonoBehaviour
 {
     public GameManagerXR manager;
 
     [Header("Zonas de Teletransporte")]
     public Transform zonaCanasta;
-    public Transform zonaDescarte;
+
     public TextMeshProUGUI textoContador;
 
     private void OnTriggerEnter(Collider other)
     {
-        // 🔹 SI ES CANASTA
-        if (other.CompareTag("Contador"))
+        // 🔹 El trigger se activa por el Contador
+        if (!other.CompareTag("Contador"))
+            return;
+
+        Debug.Log("Contador entró en la zona");
+
+        ContadorPaquetes contador = other.GetComponentInParent<ContadorPaquetes>();
+        if (contador == null)
         {
-            ContadorPaquetes contador = other.GetComponent<ContadorPaquetes>();
-
-            if (contador != null && contador.cantidad >6)
-            {
-                textoContador.text = "0/7";
-                Debug.Log("Se sumo");
-                manager.SumarPaquete();
-                
-            }
-
-            // 🚚 Teletransportar canasta
-            // 🔄 Resetear paquetes visuales
-            other.transform.position = zonaCanasta.position;
-            other.transform.rotation = zonaCanasta.rotation;
-            contador.ResetearCanastaVisual();
-
+            Debug.LogWarning("No se encontró ContadorPaquetes");
             return;
         }
-        
 
-        // 🔹 NO tocar otros objetos aquí
+        // 🔢 Solo sumar si está completa (7/7)
+        if (contador.cantidad >= 7)
+        {
+            manager.SumarPaquete();
+            textoContador.text = "0/7";
+            Debug.Log("Canasta válida, se sumó puntaje");
+        }
+
+        // 🔄 Resetear visuales
+        contador.ResetearCanastaVisual();
+
+        // 🎯 BUSCAR LA CANASTA REAL
+        Transform canasta = BuscarCanasta(other.transform);
+        if (canasta == null)
+        {
+            Debug.LogError("No se encontró objeto con tag Canasta");
+            return;
+        }
+
+        // 🚚 Teletransportar SOLO la canasta
+        Rigidbody rb = canasta.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        canasta.position = zonaCanasta.position;
+        canasta.rotation = zonaCanasta.rotation;
+    }
+
+    private Transform BuscarCanasta(Transform inicio)
+    {
+        Transform actual = inicio;
+
+        while (actual != null)
+        {
+            if (actual.CompareTag("Canasta"))
+                return actual;
+
+            actual = actual.parent;
+        }
+
+        return null;
     }
 }
