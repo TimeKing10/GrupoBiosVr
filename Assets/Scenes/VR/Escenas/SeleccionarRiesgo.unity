@@ -3327,7 +3327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fda8a33d03b1b04ca379f0db96ab396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscena: FrikoEmpaque
+  nombreEscena: SeleccionarTutorial
 --- !u!114 &1303465512
 MonoBehaviour:
   m_ObjectHideFlags: 0

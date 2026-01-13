@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/AR/EscenaAR.unity
     guid: 2fad43e31523c564ba53f8862cc679c6
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas/FabricaMizooco.unity
+    path: Assets/Scenes/VR/Escenas/FabricaMizooco/FabricaMizooco.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/VR/Escenas/EquipoProteccion.unity
@@ -36,13 +36,13 @@ EditorBuildSettings:
     path: Assets/Scenes/VR/Escenas/SelecionarMapa.unity
     guid: ca4e9af318850974ca6740d99d78a11b
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas/FrikoCortar.unity
+    path: Assets/Scenes/VR/Escenas/Friko/FrikoCortar.unity
     guid: c510c987708edc94e9289cf779c8a158
   - enabled: 1
     path: Assets/Scenes/VR/Escenas/SeleccionarModo.unity
     guid: 021b5a0b22064644bb9e1a23afc8501e
   - enabled: 1
-    path: Assets/Scenes/VR/Escenas/FrikoEmpaque.unity
+    path: Assets/Scenes/VR/Escenas/Friko/FrikoEmpaque.unity
     guid: 7efd129bf961c064b8e8d972f849024a
   - enabled: 1
     path: Assets/Scenes/VR/Escenas/RiesgoCritico.unity

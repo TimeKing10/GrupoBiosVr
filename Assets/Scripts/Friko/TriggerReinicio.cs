@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ReinicioPorColision : MonoBehaviour
+public class TriggerReinicio : MonoBehaviour
 {
     [Header("Audio")]
     
@@ -21,7 +21,7 @@ public class ReinicioPorColision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!activado && other.CompareTag("LeftHand") || other.CompareTag("RightHand"))
+        if (other.CompareTag("Player"))
         {
             activado = true;
 

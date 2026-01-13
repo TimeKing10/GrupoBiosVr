@@ -13,7 +13,7 @@ public class GameManagerXR : MonoBehaviour
     [Header("Timer")]
     public float tiempoInicial = 60f;  
     private float tiempoRestante;
-    private bool contando = false;   // ❗ Ahora NO empieza contando
+    public bool contando = false;   // ❗ Ahora NO empieza contando
 
     [Header("UI - Timer")]
     public TextMeshProUGUI textoTiempo;
@@ -40,6 +40,7 @@ public class GameManagerXR : MonoBehaviour
         // El juego todavía no arranca
         ActualizarUI();
         ActualizarTimer();
+        if(contando) panelInicio.SetActive(false);
     }
 
     private void Update()
@@ -54,6 +55,7 @@ public class GameManagerXR : MonoBehaviour
             contando = false;
             ActualizarTimer();
             FinDelTiempo();
+            panelInicio.SetActive(true);
             return;
         }
 
@@ -71,7 +73,7 @@ public class GameManagerXR : MonoBehaviour
         tiempoRestante = tiempoInicial;
         
         // Ocultar panel de introducción
-        if (panelInicio != null) panelInicio.SetActive(false);
+        if (panelInicio != null ) panelInicio.SetActive(false);
     }
 
     // ---------------------------
