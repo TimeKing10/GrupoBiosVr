@@ -9,6 +9,7 @@ public class GameManagerXR : MonoBehaviour
 
     [Header("UI - Paquetes")]
     public TextMeshProUGUI textoPaquetes;
+    public GameObject panelVictoria;
 
     [Header("Timer")]
     public float tiempoInicial = 60f;  
@@ -118,6 +119,7 @@ public class GameManagerXR : MonoBehaviour
 
     private void FinDelTiempo()
     {
+        panelVictoria.SetActive(false);
         Debug.Log("⏱ Se acabó el tiempo!");
         if (fondo != null) fondo.SetActive(true);
 
