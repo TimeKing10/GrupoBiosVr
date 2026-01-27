@@ -24,6 +24,7 @@ public class GruaEmpuje : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("GruaEmpuje: Empujando al jugador");
             CharacterController cc = other.GetComponent<CharacterController>();
             Rigidbody rb = other.GetComponent<Rigidbody>();
 

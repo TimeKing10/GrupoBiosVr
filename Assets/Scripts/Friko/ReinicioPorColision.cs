@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
-public class TriggerReinicio : MonoBehaviour
+public class ReinicioPorColision : MonoBehaviour
 {
     [Header("Audio")]
     
@@ -12,6 +12,7 @@ public class TriggerReinicio : MonoBehaviour
     [Header("Fade")]
     public RawImage fadeImage;
     public float fadeDuration = 1f;
+
 
     [Header("Escena")]
     public string nombreEscena; // Déjalo vacío para recargar la actual

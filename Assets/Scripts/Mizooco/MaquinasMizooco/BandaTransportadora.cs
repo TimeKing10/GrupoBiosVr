@@ -7,8 +7,12 @@ public class BandaTransportadora : MonoBehaviour
     public float velocidad = 2f;
 
     [Header("Filtro de objetos")]
-    public string layerAlimento = "AlimentoMizooco"; // Nombre del Layer
-    public string tagAlimento = "Alimento";         // Tag requerido
+    public string layerAlimento = "AlimentoMizooco"; 
+    public string tagAlimento = "Alimento";        
+
+    public string tagCanasta = "Canasta";     
+
+    public string tagCajitaFalsa = "CajitaFalsa";      
 
     private int alimentoLayer;
 
@@ -18,12 +22,18 @@ public class BandaTransportadora : MonoBehaviour
         alimentoLayer = LayerMask.NameToLayer(layerAlimento);
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Colisión detectada con: " + collision.gameObject.name);
+
+    }
     private void OnCollisionStay(Collision collision)
     {
+        Debug.Log("Colisión detectada con: " + collision.gameObject.name);
         GameObject obj = collision.gameObject;
 
         // Verificar si cumple una de las dos condiciones (tag O layer)
-        if (obj.CompareTag(tagAlimento) || obj.layer == alimentoLayer)
+        if (obj.CompareTag(tagAlimento) || obj.layer == alimentoLayer || obj.CompareTag(tagCanasta) || obj.CompareTag(tagCajitaFalsa))
         {
             Rigidbody rb = collision.rigidbody;
             if (rb != null)

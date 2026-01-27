@@ -13,6 +13,10 @@ TagManager:
   - RightHand
   - LeftHand
   - Cuchillo
+  - Carro
+  - Canasta
+  - Contador
+  - CajitaFalsa
   layers:
   - Default
   - TransparentFX
@@ -22,7 +26,7 @@ TagManager:
   - UI
   - Piso
   - Peligro
-  - 
+  - Pollo
   - 
   - 
   - 

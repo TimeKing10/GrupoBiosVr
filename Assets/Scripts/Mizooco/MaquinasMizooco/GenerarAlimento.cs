@@ -170,6 +170,7 @@ public class GenerarAlimento : MonoBehaviour
 
         bolsaActual = Instantiate(prefabs[prefabSeleccionado], puntoSpawn.position, puntoSpawn.rotation);
         bolsaActual.transform.SetParent(puntoSpawn);
+        bolsaActual.transform.localScale = puntoSpawn.localScale;
         if (bolsaActual.TryGetComponent<Rigidbody>(out Rigidbody rbNew))
             rbNew.isKinematic = true;
 
