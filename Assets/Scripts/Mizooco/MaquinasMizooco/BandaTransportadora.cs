@@ -7,10 +7,12 @@ public class BandaTransportadora : MonoBehaviour
     public float velocidad = 2f;
 
     [Header("Filtro de objetos")]
-    public string layerAlimento = "AlimentoMizooco"; // Nombre del Layer
-    public string tagAlimento = "Alimento";         // Tag requerido
+    public string layerAlimento = "AlimentoMizooco"; 
+    public string tagAlimento = "Alimento";        
 
-    public string tagCanasta = "Canasta";           // Tag de cajas (no usado aquí pero reservado)
+    public string tagCanasta = "Canasta";     
+
+    public string tagCajitaFalsa = "CajitaFalsa";      
 
     private int alimentoLayer;
 
@@ -31,7 +33,7 @@ public class BandaTransportadora : MonoBehaviour
         GameObject obj = collision.gameObject;
 
         // Verificar si cumple una de las dos condiciones (tag O layer)
-        if (obj.CompareTag(tagAlimento) || obj.layer == alimentoLayer || obj.CompareTag(tagCanasta))
+        if (obj.CompareTag(tagAlimento) || obj.layer == alimentoLayer || obj.CompareTag(tagCanasta) || obj.CompareTag(tagCajitaFalsa))
         {
             Rigidbody rb = collision.rigidbody;
             if (rb != null)

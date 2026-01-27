@@ -16,6 +16,7 @@ TagManager:
   - Carro
   - Canasta
   - Contador
+  - CajitaFalsa
   layers:
   - Default
   - TransparentFX
