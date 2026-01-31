@@ -56,6 +56,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VR/Escenas/Friko/RiesgoFrecuente/Tutorial.unity
     guid: beca35fdaf85ea24cb9b59f0626be58b
+  - enabled: 1
+    path: Assets/Scenes/VR/Escenas/Friko/RiesgoCritico/CriticoMaquina.unity
+    guid: 69dcc17abcbc95246ae08246fca0fff0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
